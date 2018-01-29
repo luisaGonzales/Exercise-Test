@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {connect} from 'redux-zero/react';
+import {change} from './Actions/actions';
+import Render from './Components/render';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+const App = ({name, title, code, type, success}) => {
+  return (
+    <Render name={name} title={title} code={code} type={type} success={success} />
+  );
 }
 
-export default App;
+
+
+const mapToProps = ({name, title, code, type, success}) => ({name, title, code, type, success});
+export default connect(mapToProps)(App);
+

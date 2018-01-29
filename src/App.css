@@ -26,3 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.border{
+  border-radius: 11px;
+}
+
+.minborder{
+  border-radius: 8px; 
+}

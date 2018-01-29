@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'redux-zero/react';
+import store from './store';
 
 const Index = () => {
     return(
-        <Provider >
+        <Provider store={store}>
             <App />
         </Provider>
     );
